@@ -1,0 +1,254 @@
+/* Estilo moderno para a página de login do ConectaBus */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url(assets/fundo-login.jpg) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Garante que o conteúdo não seja cortado em telas muito pequenas */
+  overflow-x: hidden; /* Previne barra de rolagem horizontal */
+  overflow-y: auto; /* Permite rolagem vertical se o conteúdo for maior que a tela */
+  -webkit-overflow-scrolling: touch; /* Para rolagem mais suave em iOS */
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem; /* Preenchimento base para telas maiores */
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 90%; /* Largura fluida, usa porcentagem da tela */
+  max-width: 400px; /* Largura máxima para que não fique muito grande em telas largas */
+  box-sizing: border-box; /* Essencial para que o padding seja incluído na largura */
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 1rem auto; /* Centraliza horizontalmente com "auto", adiciona margem superior/inferior */
+}
+
+.logo {
+  width: 200px; /* Largura base */
+  max-width: 70%; /* Permite que o logo encolha em telas menores */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px; /* Preenchimento base */
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px; /* Tamanho de fonte base */
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #222;
+  box-sizing: border-box; /* Essencial para que os inputs se ajustem corretamente */
+  transition: all 0.2s ease-in-out; /* Transição suave ao focar */
+  outline: none; /* Remove o contorno padrão ao focar */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+}
+
+input::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+.mensagem1 {
+  color: red;
+  font-size: 1rem; /* Tamanho de fonte base */
+  margin-top: 1%;
+  display: none; /* Normalmente controlado por JavaScript para exibir mensagens de erro */
+  margin-bottom: 1%;
+  margin-left: 0; /* Reinicia margem problemática */
+  text-align: center; /* Centraliza a mensagem para melhor exibição em celular */
+  width: 100%; /* Garante que respeite a largura do pai */
+  box-sizing: border-box; /* Essencial para mensagens */
+}
+
+input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 12px; /* Preenchimento base */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px; /* Tamanho de fonte base */
+  transition: background-color 0.2s ease; /* Transição suave ao passar o mouse */
+  margin-top: 10px;
+  box-sizing: border-box; /* Essencial para botões */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.signup-link {
+  margin-top: 1rem;
+  font-size: 14px; /* Tamanho de fonte base */
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+---
+
+/* Responsividade
+
+As seguintes media queries ajustam os estilos para diferentes tamanhos de tela, com foco em dispositivos como iPhones XR, 11, 12, etc., para garantir um ajuste perfeito.
+
+```css
+/* Para tamanhos de tablet comuns e telefones maiores em paisagem (ex: 769px até 481px) */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 2rem; /* Preenchimento ligeiramente reduzido */
+    margin: 1rem auto; /* Mantém centralizado com margem superior/inferior */
+  }
+
+  .logo {
+    width: 180px; /* Logo ligeiramente menor */
+    max-width: 60%; /* Encolhimento mais agressivo */
+  }
+
+  input {
+    padding: 10px; /* Preenchimento de input ligeiramente menor */
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px; /* Preenchimento de botão ligeiramente menor */
+    font-size: 15px;
+  }
+
+  .mensagem1 {
+    font-size: 0.9rem; /* Fonte menor para mensagens */
+  }
+
+  .signup-link {
+    font-size: 13px;
+  }
+}
+
+/* Para telefones modernos comuns (iPhone XR, 11 - 414px; Pixel, Galaxy - larguras similares) */
+@media (max-width: 450px) { /* Ponto de interrupção ajustado para cobrir mais telefones */
+  .login-container {
+    padding: 0.8rem; /* **Preenchimento significativamente reduzido para um ajuste mais apertado** */
+    border-radius: 12px;
+    margin: 0.5rem auto; /* Margem vertical reduzida */
+    width: 95%; /* Mantém largura generosa para o conteúdo dentro do container */
+  }
+
+  .logo {
+    width: 110px; /* Logo menor */
+    max-width: 35%; /* Ajusta o max-width ainda mais */
+    margin-bottom: 0.8rem; /* Reduz ligeiramente a margem do logo */
+  }
+
+  input {
+    padding: 7px; /* Preenchimento de input menor */
+    font-size: 13px; /* Fonte de input menor */
+    margin: 7px 0; /* Ajusta a margem vertical do input */
+  }
+
+  button {
+    padding: 9px; /* Preenchimento de botão ligeiramente menor */
+    font-size: 14px; /* Fonte de botão menor */
+    margin-top: 7px; /* Ajusta a margem superior do botão */
+  }
+
+  .mensagem1 {
+    font-size: 0.8rem; /* Fonte menor para mensagens */
+  }
+
+  .signup-link {
+    font-size: 12px;
+    margin-top: 0.8rem; /* Reduz a margem do link de cadastro */
+  }
+}
+
+/* Ajuste específico para séries iPhone 12/13/14 (largura de 390px) e telefones modernos menores similares */
+@media (max-width: 390px) {
+  .login-container {
+    padding: 0.6rem; /* **Preenchimento ainda menor para um ajuste mais apertado** */
+    margin: 0.4rem auto; /* Margem mais compacta */
+    width: 98%; /* Quase largura total para maximizar o espaço */
+  }
+
+  .logo {
+    width: 95px; /* Logo menor para ajuste apertado */
+    max-width: 30%;
+    margin-bottom: 0.6rem;
+  }
+
+  input {
+    padding: 6px; /* Preenchimento de input mínimo */
+    font-size: 12px; /* Fonte de input mínima */
+    margin: 6px 0;
+  }
+
+  button {
+    padding: 8px; /* Preenchimento de botão menor */
+    font-size: 13px; /* Fonte de botão menor */
+    margin-top: 6px;
+  }
+
+  .mensagem1 {
+    font-size: 0.75rem; /* Fonte de mensagem menor */
+  }
+
+  .signup-link {
+    font-size: 11px; /* Fonte de link muito pequena */
+    margin-top: 0.6rem;
+  }
+}
+
+/* Para telas muito pequenas (ex: iPhone SE/5, smartphones antigos, largura ~320px) */
+@media (max-width: 320px) {
+  .login-container {
+    padding: 0.4rem; /* **Preenchimento extremamente apertado** */
+    margin: 0.2rem auto; /* Margem mínima */
+    width: 99%; /* Maximiza a largura do container */
+  }
+
+  .logo {
+    width: 80px; /* Logo ainda menor */
+    max-width: 28%;
+  }
+
+  input {
+    padding: 5px; /* Preenchimento de input mínimo */
+    font-size: 11px; /* Fonte de input mínima */
+    margin: 5px 0;
+  }
+
+  button {
+    padding: 6px; /* Preenchimento de botão mínimo */
+    font-size: 12px; /* Fonte de botão mínima */
+    margin-top: 5px;
+  }
+
+  .mensagem1 {
+    font-size: 0.65rem; /* Fonte de mensagem extremamente pequena */
+  }
+
+  .signup-link {
+    font-size: 10px; /* Fonte de link extremamente pequena */
+  }
+}

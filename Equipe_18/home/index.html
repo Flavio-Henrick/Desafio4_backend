@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - ConectaBUS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="imagens/logo.png" alt="ConectaBUS logo" class="logo" />
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="https://moovitapp.com/index/pt-br/transporte_p%C3%BAblico-lines-Sao_Luis-4043-909237">Rotas e Horários</a></li>
+        <li><a href="../forum/forum.html">Fórum</a></li>
+        <li><a href="../Login/login.html">Login ou cadastro</a></li>
+      </ul>
+      <button id="menu-button" aria-label="Abrir menu">☰</button>
+      <button id="options-button" aria-label="Abrir opções">⚙️</button>
+    </nav>
+  </header>
+
+  <div id="options-panel" class="hidden">
+    <button onclick="toggleTheme()">Tema Claro / Escuro</button>
+    <button>Configurações</button>
+  </div>
+
+  <main>
+    <div class="layout-container">
+      <div class="posts">
+        <section class="post">
+          <div class="post-header">
+            <img src="imagens/bus.png" alt="Ônibus em manutenção" />
+            <h3>Terminal do São Cristovão</h3>
+          </div>
+          <p>
+            Devido a um acidente ocorrido na avenida Jeronimo de Albuquerque as linhas que trafegam nessa avenida apresentaram atrasos devido ao congestionamento.
+            A linha dos onibus UEMA IPASE será a mais prejudicada, com um onibus a menos o tempo de espera demorá 20 minutos alem do esperado.
+          </p>
+          <img src="imagens/batida.jpeg" alt="batida de onibus" class="postbatida" />
+          <div class="post-actions">
+            <span>💬 24</span> | <span>❤️ 149</span> | <span>🔄 22</span>
+          </div>
+        </section>
+        <section class="post">
+          <div class="post-header">
+            <img src="imagens/bus.png" alt="Ônibus na estação" />
+            <h3>Terminal da Cohab</h3>
+          </div>
+          <p>
+            A partir de segunda-feira, a Linha 3013 (Cohatrac / São Francisco) terá novos horários durante os dias úteis. Consulte os detalhes na página de horários.
+          </p>
+          <div class="post-actions">
+            <span>💬 10</span> | <span>❤️ 85</span> | <span>🔄 14</span>
+          </div>
+        </section>
+        <section class="post">
+          <div class="post-header">
+            <img src="imagens/bus.png" alt="Ônibus em circulação" />
+            <h3>Terminal da Cohama</h3>
+          </div>
+          <p>
+            Após manutenção, a Linha 201 (terminal Cohama / Holandeses) já está operando normalmente em todos os seus pontos.
+          </p>
+          <div class="post-actions">
+            <span>💬 5</span> | <span>❤️ 60</span> | <span>🔄 8</span>
+          </div>
+        </section>
+      </div>
+      <div class="holidays-box">
+        <aside class="holiday-box">
+          <h3>Feriados Nacionais</h3>
+          <ul id="holiday-list">
+            <li>Carregando...</li>
+          </ul>
+          <p>
+            Obs.: As rotas urbanas são reduzidas e sofrem modificações nos horários aos feriados e fins de semana (não se aplica para rotas intermunicipais).
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

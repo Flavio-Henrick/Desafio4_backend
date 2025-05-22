@@ -1,0 +1,280 @@
+/* -------------------------------
+   FONTES E CORES BASE
+--------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #F5F5F5;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* -------------------------------
+   CABEÇALHO E NAVEGAÇÃO
+--------------------------------- */
+header {
+  background-color: #c8d6e5; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-bar li:not(:last-child) a {
+  border-right: 2px solid #000;
+}
+
+/* -------------------------------
+   BOTÕES DE MENU E OPÇÕES
+--------------------------------- */
+#menu-button,
+#options-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  display: none;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* -------------------------------
+   PAINEL DE OPÇÕES
+--------------------------------- */
+#options-panel {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+#options-panel.visible {
+  display: flex;
+}
+
+/* -------------------------------
+   LAYOUT PRINCIPAL
+--------------------------------- */
+main {
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.layout-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.posts {
+  flex: 3 1 600px;
+}
+
+.holidays-box {
+  flex: 1 1 300px;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+/* -------------------------------
+   CAIXA DE FERIADOS
+--------------------------------- */
+.holiday-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 80px;
+}
+
+.holiday-box h3 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+.holiday-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.holiday-box li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* -------------------------------
+   POSTS
+--------------------------------- */
+.post {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.6; /* 👈 Aumenta o espaçamento entre linhas */
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.post-header img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.postbatida {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.post-actions {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+.post-actions span:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* -------------------------------
+   TEMA ESCURO
+--------------------------------- */
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f4f4f4;
+}
+
+.dark-theme header,
+.dark-theme .post,
+.dark-theme #options-panel {
+  background-color: #2e2e2e;
+  color: #f4f4f4;
+  border-color: transparent;
+}
+
+.dark-theme .nav-bar a {
+  color: #ff6600;
+}
+
+.dark-theme .holiday-box {
+  background-color: #2e2e2e;
+  color: #f4f4f4;
+  border: none;
+}
+
+/* -------------------------------
+   RESPONSIVIDADE (MOBILE)
+--------------------------------- */
+@media (max-width: 768px) {
+  #menu-button,
+  #options-button {
+    display: block;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ebeff2;
+    width: 200px;
+    display: none;
+    border-left: 2px solid #000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-bar ul.show {
+    display: flex;
+  }
+
+  .nav-bar li:not(:last-child) a {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 15px 20px;
+  }
+
+  .nav-bar li:last-child {
+    display: none;
+  }
+
+  .layout-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .posts,
+  .holidays-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .holiday-box {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+}
